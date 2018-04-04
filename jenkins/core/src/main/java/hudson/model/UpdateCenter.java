@@ -550,7 +550,7 @@ public class UpdateCenter extends AbstractModelObject implements Saveable, OnMas
         return new XmlFile(XSTREAM,new File(Jenkins.getInstance().root,
                                     UpdateCenter.class.getName()+".xml"));
     }
-
+//help me
     public List<Plugin> getAvailables() {
         Map<String,Plugin> pluginMap = new LinkedHashMap<String, Plugin>();
         for (UpdateSite site : sites) {

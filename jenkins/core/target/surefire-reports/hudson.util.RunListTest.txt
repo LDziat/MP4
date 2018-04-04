@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: hudson.util.RunListTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.73 sec - in hudson.util.RunListTest

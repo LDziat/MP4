@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: hudson.util.XStream2Test
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.311 sec <<< FAILURE! - in hudson.util.XStream2Test
+concurrentHashMapSerialization(hudson.util.XStream2Test)  Time elapsed: 0.149 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at hudson.util.XStream2Test.concurrentHashMapSerialization(XStream2Test.java:302)
+

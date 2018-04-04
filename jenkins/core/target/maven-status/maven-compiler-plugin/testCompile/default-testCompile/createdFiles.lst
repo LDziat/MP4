@@ -1,0 +1,16 @@
+hudson/util/SecretRewriterTest.class
+jenkins/util/AtmostOneTaskExecutorTest.class
+hudson/BulkChangeTest$1.class
+jenkins/security/HMACConfidentialKeyTest.class
+hudson/util/SecretTest.class
+hudson/UtilTest$1.class
+jenkins/security/HexStringConfidentialKeyTest.class
+hudson/util/SecretTest$Foo.class
+hudson/util/CyclicGraphDetectorTest$1.class
+hudson/util/ProcessTreeTest$1.class
+jenkins/security/CryptoConfidentialKeyTest.class
+hudson/model/listeners/SCMListenerTest$1.class
+hudson/model/TaskActionTest$1.class
+jenkins/security/DefaultConfidentialStoreTest.class
+hudson/util/XStream2Test$1.class
+META-INF/annotations/org.kohsuke.stapler.export.ExportedBean

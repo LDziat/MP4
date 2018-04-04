@@ -326,6 +326,10 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
      *
      * @since 1.301
      */
+	void updateAndTrim() {
+		updateComputerList();
+        trimLabels();				
+        }
     // this field needs to be at the very top so that other components can look at this value even during unmarshalling
     private String version = "1.0";
 

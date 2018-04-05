@@ -14,6 +14,7 @@ import java.io.IOException;
 import org.apache.commons.lang.StringUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
 
+import static jenkins.mvn.FilePathSuper.superSupplySettings;
 /**
  * @author <a href="mailto:nicolas.deloof@gmail.com">Nicolas De Loof</a>
  * @author Dominik Bartholdi (imod)
@@ -34,33 +35,8 @@ public class FilePathGlobalSettingsProvider extends GlobalSettingsProvider {
 
     @Override
     public FilePath supplySettings(AbstractBuild<?, ?> build, TaskListener listener) {
-        if (StringUtils.isEmpty(path)) {
-            return null;
-        }
 
-        try {
-            EnvVars env = build.getEnvironment(listener);
-            String targetPath = Util.replaceMacro(this.path, build.getBuildVariableResolver());
-            targetPath = env.expand(targetPath);
-
-            if (IOUtils.isAbsolute(targetPath)) {
-                return new FilePath(new File(targetPath));
-            } else {
-                FilePath mrSettings = build.getModuleRoot().child(targetPath);
-                FilePath wsSettings = build.getWorkspace().child(targetPath);
-                try {
-                    if (!wsSettings.exists() && mrSettings.exists()) {
-                        wsSettings = mrSettings;
-                    }
-                } catch (Exception e) {
-                    throw new IllegalStateException("failed to find settings.xml at: " + wsSettings.getRemote());
-                }
-                return wsSettings;
-            }
-        } catch (Exception e) {
-            throw new IllegalStateException("failed to prepare global settings.xml");
-        }
-
+		return superSupplySettings(build, listener, path);
     }
 
     @Extension(ordinal = 10)
